@@ -1,28 +1,36 @@
-YEHEZKIEL & ABIGAIL — STILL BEING WRITTEN
-==========================================
+YEHEZKIEL & ABIGAIL — STILL BEING WRITTEN (V2)
+================================================
 
 Cara pakai:
 1. Extract ZIP.
-2. Buka index.html di browser.
-3. Website sudah responsive dan bisa jalan tanpa install apa pun.
+2. Buka index.html di Chrome / Safari / Edge.
+3. Default bahasa: English. Gunakan tombol EN / ID di bagian atas untuk mengganti bahasa.
 
-Ganti foto:
-- Cari teks "place your first-photo / chat here", "our photo", dan placeholder lain di index.html.
-- Cara paling gampang: ganti elemen placeholder menjadi <img src="assets/nama-foto.jpg" alt="..."> lalu taruh file fotonya di folder assets.
-- Jika mau, setelah kamu kirim foto-foto kalian ke ChatGPT, versi berikutnya bisa langsung dipasang ke layout.
+Upload foto langsung dari website:
+- Semua frame foto punya tombol "upload photo / upload foto".
+- Pilih foto dari HP/laptop dan preview akan langsung masuk ke frame.
+- Browser akan mencoba menyimpan versi foto yang sudah dikompres ke local storage supaya tetap muncul saat halaman dibuka lagi di device/browser yang sama.
+- Kalau browser memblokir penyimpanan local file, preview tetap bekerja untuk sesi tersebut.
+
+Momen awal:
+- First DM: 16 April 2026.
+- Screenshot first DM yang kamu kirim sudah dipasang sebagai default pada frame awal dan tetap bisa diganti lewat tombol upload.
+
+Letters for Abigail:
+- Sekarang berisi 12 surat.
+- Tersedia versi English dan Indonesia.
+- Versi Indonesia sengaja dibuat lebih conversational/santai: anggep, hadepin, pengen, tetep, dll.
 
 Pasang musik:
 - Masukkan file MP3 ke folder assets.
-- Rename menjadi: our-song.mp3
-- Tombol "our song" di navbar akan langsung berfungsi.
+- Rename jadi: our-song.mp3
+- Tombol "our song" otomatis akan memakai file tersebut.
 
-Tanggal awal journey:
-- Saat ini counter memakai 09 Juli 2026.
-- Ubah konstanta START_DATE pada script.js jika dibutuhkan.
-
-File penting:
-- index.html              halaman utama
-- styles.css              seluruh UI / responsive
-- script.js               animasi, counter, letters, map, music
-- for-abigail-only.html   hidden page khusus Abigail
-- assets/                 foto dan musik kalian
+File:
+- index.html
+- styles.css
+- script.js
+- for-abigail-only.html
+- assets/first-dm.jpeg
+- assets/first-reply.jpeg
+- assets/our-song.mp3 (opsional, tambahkan sendiri)

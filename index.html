@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,52 +14,83 @@
   <header class="site-header" id="siteHeader">
     <a class="brand" href="#top" aria-label="Back to top">Y&A</a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="#journey">journey</a>
-      <a href="#little-things">memories</a>
-      <a href="#letters">letters</a>
-      <a href="#today">us</a>
+      <a href="#journey" data-i18n="navJourney">journey</a>
+      <a href="#little-things" data-i18n="navMemories">memories</a>
+      <a href="#letters" data-i18n="navLetters">letters</a>
+      <a href="#today" data-i18n="navUs">us</a>
     </nav>
-    <button class="music-btn" id="musicBtn" type="button" aria-label="Play our song">♫ <span>our song</span></button>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" type="button" data-lang="en">EN</button>
+        <span>/</span>
+        <button class="lang-btn" type="button" data-lang="id">ID</button>
+      </div>
+      <button class="music-btn" id="musicBtn" type="button" aria-label="Play our song">♫ <span data-i18n="ourSong">our song</span></button>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero section-pad" aria-labelledby="hero-title">
       <div class="hero-orbit orbit-one" aria-hidden="true"></div>
       <div class="hero-orbit orbit-two" aria-hidden="true"></div>
-      <div class="hero-card photo-card photo-card-a" aria-hidden="true">
-        <div class="photo-placeholder">our photo</div>
-        <span>one of my favorite days</span>
+
+      <div class="hero-card photo-card photo-card-a photo-frame" data-photo-key="hero-left">
+        <div class="photo-stage compact">
+          <div class="photo-placeholder" data-i18n="ourPhoto">our photo</div>
+          <img alt="Uploaded memory" />
+          <label class="upload-photo mini-upload">
+            <input type="file" accept="image/*" />
+            <span>＋ <b data-i18n="uploadPhoto">upload photo</b></span>
+          </label>
+        </div>
+        <span data-i18n="favoriteDay">one of my favorite days</span>
       </div>
-      <div class="hero-card photo-card photo-card-b" aria-hidden="true">
-        <div class="photo-placeholder">little memory</div>
-        <span>still my favorite person</span>
+
+      <div class="hero-card photo-card photo-card-b photo-frame" data-photo-key="hero-right">
+        <div class="photo-stage compact">
+          <div class="photo-placeholder" data-i18n="littleMemory">little memory</div>
+          <img alt="Uploaded memory" />
+          <label class="upload-photo mini-upload">
+            <input type="file" accept="image/*" />
+            <span>＋ <b data-i18n="uploadPhoto">upload photo</b></span>
+          </label>
+        </div>
+        <span data-i18n="favoritePerson">still my favorite person</span>
       </div>
 
       <div class="hero-copy reveal">
-        <p class="eyebrow">A LITTLE ARCHIVE OF US</p>
+        <p class="eyebrow" data-i18n="heroEyebrow">A LITTLE ARCHIVE OF US</p>
         <h1 id="hero-title">Yehezkiel <span>&</span> Abigail</h1>
-        <p class="hero-subtitle">still being written.</p>
-        <p class="hero-note">I don’t know exactly where this story will take us. I’m just grateful that somehow, our paths crossed.</p>
-        <a class="primary-btn" href="#journey">enter our story <span>→</span></a>
+        <p class="hero-subtitle" data-i18n="stillWritten">still being written.</p>
+        <p class="hero-note" data-i18n="heroNote">I don’t know exactly where this story will take us. I’m just grateful that somehow, our paths crossed.</p>
+        <a class="primary-btn" href="#journey"><span data-i18n="enterStory">enter our story</span> <span>→</span></a>
       </div>
 
-      <div class="scroll-cue" aria-hidden="true"><span>scroll</span><i></i></div>
+      <div class="scroll-cue" aria-hidden="true"><span data-i18n="scroll">scroll</span><i></i></div>
     </section>
 
     <section class="opening section-pad" id="journey">
       <div class="section-number reveal">01</div>
       <div class="split-layout">
         <div class="section-copy reveal">
-          <p class="eyebrow">HOW IT STARTED</p>
-          <h2>some stories<br/>don’t begin loudly.</h2>
-          <p>It started with something simple: a message, a reply, a conversation. Nothing looked extraordinary yet. And somehow, in the middle of ordinary days, you became someone I wanted to know more deeply.</p>
+          <p class="eyebrow" data-i18n="howStarted">HOW IT STARTED</p>
+          <h2 data-i18n-html="openingTitle">some stories<br/>don’t begin loudly.</h2>
+          <p data-i18n="openingBody">It started with one message on April 16, 2026. Back then, I didn’t know where a simple act of kindness would lead. I only knew I wanted you to know that, even from a stranger’s perspective, you mattered more than you thought. Somehow, that little message became the first page of this story.</p>
           <p class="signature">— Yehezkiel</p>
         </div>
-        <div class="memory-frame reveal tilt-right">
-          <div class="frame-photo photo-placeholder large">place your first-photo / chat here</div>
+
+        <div class="memory-frame reveal tilt-right photo-frame" data-photo-key="first-memory">
+          <div class="photo-stage large has-default">
+            <img class="default-image" src="assets/first-dm.jpeg" alt="First DM on 16 April 2026" />
+            <img class="uploaded-image" alt="Uploaded first memory" />
+            <label class="upload-photo">
+              <input type="file" accept="image/*" />
+              <span>＋ <b data-i18n="changePhoto">change photo</b></span>
+            </label>
+          </div>
           <div class="frame-meta">
-            <span>09 JUL 2026</span>
-            <em>the beginning</em>
+            <span>16 APR 2026</span>
+            <em data-i18n="theBeginning">the beginning</em>
           </div>
         </div>
       </div>
@@ -67,29 +98,29 @@
 
     <section class="timeline-section section-pad">
       <div class="section-heading reveal">
-        <p class="eyebrow">OUR TIMELINE</p>
-        <h2>the pages that brought us here.</h2>
+        <p class="eyebrow" data-i18n="timelineEyebrow">OUR TIMELINE</p>
+        <h2 data-i18n="timelineTitle">the pages that brought us here.</h2>
       </div>
 
       <div class="timeline">
         <article class="timeline-item reveal">
-          <div class="timeline-date">09 JUL</div>
+          <div class="timeline-date">16 APR</div>
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <small>THE BEGINNING</small>
-            <h3>one message.</h3>
-            <p>Sometimes a story begins before we even realize we are already inside it.</p>
+            <small data-i18n="timelineFirstLabel">THE FIRST DM</small>
+            <h3 data-i18n="timelineFirstTitle">one message.</h3>
+            <p data-i18n="timelineFirstBody">A message sent without knowing it would become the first line of something I’d eventually treasure.</p>
           </div>
         </article>
 
         <article class="timeline-item reverse reveal">
-          <div class="timeline-date">19 JUL</div>
+          <div class="timeline-date">16 APR</div>
           <div class="timeline-dot"></div>
           <div class="timeline-content chat-card">
-            <small>THEN SHE REPLIED</small>
+            <small data-i18n="thenSheReplied">THEN SHE REPLIED</small>
             <p class="chat-name">Abigail</p>
-            <blockquote>“...”</blockquote>
-            <span>replace this with the chat that started everything.</span>
+            <blockquote>“thank you for reminding me that i matter, even when i forget that myself.”</blockquote>
+            <span data-i18n="replyNote">I sent kindness to a stranger. Somehow, kindness came right back.</span>
           </div>
         </article>
 
@@ -97,19 +128,19 @@
           <div class="timeline-date">29 JUL</div>
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <small>ONE SENTENCE I KEEP</small>
+            <small data-i18n="oneSentenceKeep">ONE SENTENCE I KEEP</small>
             <h3>“we’re on the same team.”</h3>
-            <p>Some sentences are small. Some stay.</p>
+            <p data-i18n="smallSentences">Some sentences are small. Some stay.</p>
           </div>
         </article>
 
         <article class="timeline-item reverse reveal">
-          <div class="timeline-date">TODAY</div>
+          <div class="timeline-date" data-i18n="todayWord">TODAY</div>
           <div class="timeline-dot heart-dot">♡</div>
           <div class="timeline-content">
-            <small>NOT AN ENDING</small>
-            <h3>still discovering you.</h3>
-            <p>There is still so much I don’t know about you. Maybe that’s my favorite part.</p>
+            <small data-i18n="notEnding">NOT AN ENDING</small>
+            <h3 data-i18n="stillDiscovering">still discovering you.</h3>
+            <p data-i18n="favoritePart">There is still so much I don’t know about you. Maybe that’s my favorite part.</p>
           </div>
         </article>
       </div>
@@ -117,39 +148,39 @@
 
     <section class="little-things section-pad" id="little-things">
       <div class="section-heading wide reveal">
-        <p class="eyebrow">LITTLE THINGS</p>
-        <h2>things about you that somehow live in my head rent-free.</h2>
+        <p class="eyebrow" data-i18n="littleThings">LITTLE THINGS</p>
+        <h2 data-i18n="rentFree">things about you that somehow live in my head rent-free.</h2>
       </div>
       <div class="card-grid">
-        <article class="detail-card reveal"><span>01</span><h3>rain ☁</h3><p>which apparently means I’m applying for the position of your personal weather forecast.</p></article>
-        <article class="detail-card reveal"><span>02</span><h3>pho 🍜</h3><p>important information. possibly life-changing information.</p></article>
-        <article class="detail-card reveal"><span>03</span><h3>“sayanggggg”</h3><p>yes, the number of g’s matters.</p></article>
-        <article class="detail-card reveal"><span>04</span><h3>ice-cold water</h3><p>normal water apparently did something personally offensive to you.</p></article>
-        <article class="detail-card reveal"><span>05</span><h3>your soft heart</h3><p>one of the things I notice most — even when you try to hide how much you care.</p></article>
-        <article class="detail-card reveal"><span>06</span><h3>your faith</h3><p>the way you keep returning to God makes me want to keep growing too.</p></article>
+        <article class="detail-card reveal"><span>01</span><h3 data-i18n="chocolateTitle">chocolate 🍫</h3><p data-i18n="chocolateBody">apparently one of the easiest ways to make your day a little better.</p></article>
+        <article class="detail-card reveal"><span>02</span><h3 data-i18n="gelatoTitle">gelato & sweet things 🍨</h3><p data-i18n="gelatoBody">if it’s cold, sweet, creamy, or dessert-shaped, chances are you’re interested.</p></article>
+        <article class="detail-card reveal"><span>03</span><h3>“sayanggggg”</h3><p data-i18n="sayangBody">yes, the number of g’s matters.</p></article>
+        <article class="detail-card reveal"><span>04</span><h3 data-i18n="coldWaterTitle">ice-cold water</h3><p data-i18n="coldWaterBody">normal water apparently did something personally offensive to you.</p></article>
+        <article class="detail-card reveal"><span>05</span><h3 data-i18n="softHeartTitle">your soft heart</h3><p data-i18n="softHeartBody">one of the things I notice most — even when you try to hide how much you care.</p></article>
+        <article class="detail-card reveal"><span>06</span><h3 data-i18n="faithTitle">your faith</h3><p data-i18n="faithBody">the way you keep returning to God makes me want to keep growing too.</p></article>
       </div>
     </section>
 
     <section class="chat-museum section-pad">
       <div class="section-heading reveal">
-        <p class="eyebrow">CHAT MUSEUM</p>
-        <h2>tiny sentences,<br/>big place in my heart.</h2>
+        <p class="eyebrow" data-i18n="chatMuseum">CHAT MUSEUM</p>
+        <h2 data-i18n-html="chatTitle">tiny sentences,<br/>big place in my heart.</h2>
       </div>
       <div class="messages-wrap">
         <div class="floating-message message-left reveal">
           <span>Abigail</span>
           <p>“we’re on the same team.”</p>
-          <small>one sentence I never want to forget.</small>
+          <small data-i18n="neverForget">one sentence I never want to forget.</small>
         </div>
         <div class="floating-message message-right reveal">
           <span>Abigail</span>
           <p>“pengen nikah sama kak kiell.”</p>
-          <small>me internally: ???????????</small>
+          <small data-i18n="internally">me internally: ???????????</small>
         </div>
         <div class="floating-message message-center reveal">
           <span>Yehezkiel</span>
           <p>“pelan-pelan, tapi aku tetap di sini.”</p>
-          <small>no rushing. no disappearing. just growing.</small>
+          <small data-i18n="noRushing">no rushing. no disappearing. just growing.</small>
         </div>
       </div>
     </section>
@@ -157,14 +188,14 @@
     <section class="faith-section section-pad" id="faith">
       <div class="faith-stars" aria-hidden="true">✦ · ✧ · ✦ · ✧ · ✦</div>
       <div class="faith-inner reveal">
-        <p class="eyebrow">GOD IN OUR STORY</p>
-        <h2>Before there was an “us”,<br/>there was God.</h2>
+        <p class="eyebrow" data-i18n="godStory">GOD IN OUR STORY</p>
+        <h2 data-i18n-html="beforeUs">Before there was an “us”,<br/>there was God.</h2>
         <div class="prayer-lines">
-          <p>Thank You for letting our paths cross.</p>
-          <p>Teach us to love without controlling.</p>
-          <p>Teach us to grow without losing ourselves.</p>
-          <p>Teach us to choose You before choosing each other.</p>
-          <p>And if this story is from You, teach us to take care of it well.</p>
+          <p data-i18n="prayer1">Thank You for letting our paths cross.</p>
+          <p data-i18n="prayer2">Teach us to love without controlling.</p>
+          <p data-i18n="prayer3">Teach us to grow without losing ourselves.</p>
+          <p data-i18n="prayer4">Teach us to choose You before choosing each other.</p>
+          <p data-i18n="prayer5">And if this story is from You, teach us to take care of it well.</p>
         </div>
         <div class="cross-mark">✦</div>
       </div>
@@ -172,55 +203,70 @@
 
     <section class="places-section section-pad">
       <div class="section-heading reveal">
-        <p class="eyebrow">PLACES & MEMORIES</p>
-        <h2>places we’ve been,<br/>places waiting for us.</h2>
+        <p class="eyebrow" data-i18n="placesMemories">PLACES & MEMORIES</p>
+        <h2 data-i18n-html="placesTitle">places we’ve been,<br/>places waiting for us.</h2>
       </div>
       <div class="map-paper reveal">
         <div class="map-line line-a"></div><div class="map-line line-b"></div>
-        <button class="map-pin pin-1" type="button" data-place="Kudus" data-note="home, departures, returns."><i></i><span>Kudus</span></button>
-        <button class="map-pin pin-2" type="button" data-place="Semarang" data-note="a day worth keeping."><i></i><span>Semarang</span></button>
-        <button class="map-pin pin-3 future" type="button" data-place="Somewhere" data-note="someday, with you."><i></i><span>Someday</span></button>
-        <div class="map-caption" id="mapCaption"><strong>tap a place</strong><span>our little memory map</span></div>
+        <button class="map-pin pin-1" type="button" data-place-en="Kudus" data-place-id="Kudus" data-note-en="home, departures, returns." data-note-id="rumah, keberangkatan, dan pulang lagi."><i></i><span>Kudus</span></button>
+        <button class="map-pin pin-2" type="button" data-place-en="Semarang" data-place-id="Semarang" data-note-en="a day worth keeping." data-note-id="hari yang pengen disimpen baik-baik."><i></i><span>Semarang</span></button>
+        <button class="map-pin pin-3 future" type="button" data-place-en="Somewhere" data-place-id="Entah di mana" data-note-en="someday, with you." data-note-id="suatu hari nanti, sama kamu."><i></i><span data-i18n="someday">Someday</span></button>
+        <div class="map-caption" id="mapCaption"><strong data-i18n="tapPlace">tap a place</strong><span data-i18n="memoryMap">our little memory map</span></div>
       </div>
     </section>
 
     <section class="numbers-section section-pad">
       <div class="numbers-grid">
-        <div class="number-item reveal"><strong id="daysCounter">—</strong><span>days since our story started</span></div>
-        <div class="number-item reveal"><strong>∞</strong><span>things I still want to know about you</span></div>
-        <div class="number-item reveal"><strong>1</strong><span>team — you & me</span></div>
+        <div class="number-item reveal"><strong>16 APR</strong><span data-i18n="knewSince">we knew each other since 16 April 2026</span></div>
+        <div class="number-item reveal"><strong>∞</strong><span data-i18n="thingsKnow">things I still want to know about you</span></div>
+        <div class="number-item reveal"><strong>1</strong><span data-i18n="oneTeam">team — you & me</span></div>
       </div>
     </section>
 
     <section class="letters-section section-pad" id="letters">
       <div class="section-heading wide reveal">
-        <p class="eyebrow">LETTERS FOR ABIGAIL</p>
-        <h2>open when...</h2>
-        <p>for the days when I can’t find the perfect words fast enough.</p>
+        <p class="eyebrow" data-i18n="lettersFor">LETTERS FOR ABIGAIL</p>
+        <h2 data-i18n="openWhen">open when...</h2>
+        <p data-i18n="lettersIntro">for the moments when I can’t find the perfect words fast enough.</p>
       </div>
       <div class="letters-grid">
-        <button class="envelope reveal" data-letter="miss" type="button"><span>♡</span><strong>you miss me</strong><small>open me</small></button>
-        <button class="envelope reveal" data-letter="tired" type="button"><span>☾</span><strong>you’re tired</strong><small>open me</small></button>
-        <button class="envelope reveal" data-letter="notokay" type="button"><span>✦</span><strong>we’re not okay</strong><small>open me</small></button>
-        <button class="envelope reveal" data-letter="reassure" type="button"><span>∞</span><strong>you need reassurance</strong><small>open me</small></button>
+        <button class="envelope reveal" data-letter="miss" type="button"><span>♡</span><strong data-i18n="envMiss">you miss me</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="tired" type="button"><span>☾</span><strong data-i18n="envTired">you’re tired</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="overthink" type="button"><span>∞</span><strong data-i18n="envOverthink">you’re overthinking</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="badDay" type="button"><span>☁</span><strong data-i18n="envBadDay">you had a bad day</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="cry" type="button"><span>☂</span><strong data-i18n="envCry">you feel like crying</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="alone" type="button"><span>⌂</span><strong data-i18n="envAlone">you feel alone</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="reassure" type="button"><span>✦</span><strong data-i18n="envReassure">you need reassurance</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="doubt" type="button"><span>↟</span><strong data-i18n="envDoubt">you doubt yourself</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="notokay" type="button"><span>≈</span><strong data-i18n="envNotOkay">we’re not okay</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="cantSleep" type="button"><span>☾</span><strong data-i18n="envSleep">you can’t sleep</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="happy" type="button"><span>☀</span><strong data-i18n="envHappy">you’re really happy</strong><small data-i18n="openMe">open me</small></button>
+        <button class="envelope reveal" data-letter="rememberUs" type="button"><span>♧</span><strong data-i18n="envRemember">you need to remember us</strong><small data-i18n="openMe">open me</small></button>
       </div>
     </section>
 
     <section class="today-section section-pad" id="today">
-      <div class="today-photo reveal">
-        <div class="photo-placeholder portrait">your favorite photo together</div>
-        <span>today, and all the little todays after this.</span>
+      <div class="today-photo reveal photo-frame" data-photo-key="today-photo">
+        <div class="photo-stage portrait">
+          <div class="photo-placeholder" data-i18n="favoriteTogether">your favorite photo together</div>
+          <img alt="Uploaded favorite photo together" />
+          <label class="upload-photo">
+            <input type="file" accept="image/*" />
+            <span>＋ <b data-i18n="uploadPhoto">upload photo</b></span>
+          </label>
+        </div>
+        <span data-i18n="littleTodays">today, and all the little todays after this.</span>
       </div>
       <div class="today-copy reveal">
-        <p class="eyebrow">TODAY</p>
-        <h2>Still being written.</h2>
-        <p>There is still so much about you I haven’t discovered yet.</p>
-        <p>And maybe that’s my favorite part.</p>
+        <p class="eyebrow" data-i18n="todayWord">TODAY</p>
+        <h2 data-i18n="stillWritten">Still being written.</h2>
+        <p data-i18n="todayLine1">There is still so much about you I haven’t discovered yet.</p>
+        <p data-i18n="todayLine2">And maybe that’s my favorite part.</p>
         <div class="question-box">
-          <h3>continue this story with me?</h3>
+          <h3 data-i18n="continueStory">continue this story with me?</h3>
           <div class="answer-buttons" id="answerButtons">
-            <button class="yes-btn" id="yesBtn" type="button">yes ♡</button>
-            <button class="no-btn" id="noBtn" type="button">no</button>
+            <button class="yes-btn" id="yesBtn" type="button" data-i18n="yes">yes ♡</button>
+            <button class="no-btn" id="noBtn" type="button" data-i18n="no">no</button>
           </div>
           <p class="answer-message" id="answerMessage" aria-live="polite"></p>
         </div>
@@ -229,17 +275,17 @@
   </main>
 
   <footer>
-    <p>made with too much love by Yehezkiel.</p>
-    <a href="for-abigail-only.html">psst, Abigail…</a>
+    <p data-i18n="madeWithLove">made with too much love by Yehezkiel.</p>
+    <a href="for-abigail-only.html" data-i18n="psst">psst, Abigail…</a>
   </footer>
 
   <div class="letter-modal" id="letterModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
     <div class="letter-sheet">
       <button class="close-letter" id="closeLetter" type="button" aria-label="Close letter">×</button>
-      <p class="letter-kicker">FOR ABIGAIL</p>
+      <p class="letter-kicker" data-i18n="forAbigail">FOR ABIGAIL</p>
       <h2 id="letterTitle">Open when...</h2>
       <div id="letterBody"></div>
-      <p class="letter-sign">love,<br/>Yehezkiel</p>
+      <p class="letter-sign"><span data-i18n="loveSign">love,</span><br/>Yehezkiel</p>
     </div>
   </div>
 

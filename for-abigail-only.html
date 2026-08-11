@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Abigail Only ♡</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#211c1a;color:#f7f2ea;font-family:system-ui,-apple-system,sans-serif;padding:24px}.card{text-align:center;max-width:760px}.mini{font-size:10px;letter-spacing:.24em;color:#c6a66b}.card h1{font:400 clamp(48px,9vw,92px)/.95 Georgia,serif;margin:20px 0 42px}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.answers button{border:1px solid rgba(255,255,255,.18);background:transparent;color:#f7f2ea;padding:16px;border-radius:999px;cursor:pointer}.answers button:hover{background:#f7f2ea;color:#211c1a}.result{font:italic 24px Georgia,serif;color:#d9b6b0;min-height:42px;margin-top:35px}.back{display:inline-block;margin-top:30px;color:#c6a66b;font-size:12px}@media(max-width:560px){.answers{grid-template-columns:1fr}}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#211c1a;color:#f7f2ea;font-family:system-ui,-apple-system,sans-serif;padding:24px}.card{text-align:center;max-width:760px}.mini{font-size:10px;letter-spacing:.24em;color:#c6a66b}.card h1{font:400 clamp(48px,9vw,92px)/.95 Georgia,serif;margin:20px 0 42px}.answers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.answers button{border:1px solid rgba(255,255,255,.18);background:transparent;color:#f7f2ea;padding:16px;border-radius:999px;cursor:pointer}.answers button:hover{background:#f7f2ea;color:#211c1a}.result{font:italic 24px Georgia,serif;color:#d9b6b0;min-height:42px;margin-top:35px}.back{display:inline-block;margin-top:30px;color:#c6a66b;font-size:12px}.switch{position:fixed;top:18px;right:20px;display:flex;gap:5px;align-items:center;border:1px solid rgba(255,255,255,.16);padding:5px 8px;border-radius:999px}.switch button{border:0;background:transparent;color:#aaa;padding:5px 7px;font:700 10px system-ui;cursor:pointer;border-radius:999px}.switch button.active{background:#f7f2ea;color:#211c1a}.switch span{opacity:.35}@media(max-width:560px){.answers{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <div class="switch"><button data-lang="en">EN</button><span>/</span><button data-lang="id">ID</button></div>
   <main class="card">
-    <p class="mini">TOP SECRET — ABIGAIL ONLY</p>
-    <h1>Who is the prettiest girl in my world?</h1>
+    <p class="mini" data-en="TOP SECRET — ABIGAIL ONLY" data-id="TOP SECRET — CUMA BUAT ABIGAIL">TOP SECRET — ABIGAIL ONLY</p>
+    <h1 data-en="Who is the prettiest girl in my world?" data-id="Siapa cewek paling cantik di duniaku?">Who is the prettiest girl in my world?</h1>
     <div class="answers">
-      <button>Abigail</button><button>Abigail</button><button>Abigail</button><button>obviously Abigail</button>
+      <button>Abigail</button><button>Abigail</button><button>Abigail</button><button data-en="obviously Abigail" data-id="ya jelas Abigail">obviously Abigail</button>
     </div>
     <p class="result" id="result"></p>
-    <a class="back" href="index.html">← back to our story</a>
+    <a class="back" href="index.html" data-en="← back to our story" data-id="← balik ke cerita kita">← back to our story</a>
   </main>
-  <script>document.querySelectorAll('button').forEach(b=>b.onclick=()=>document.getElementById('result').textContent='correct answer, sayang. ♡');</script>
+  <script>
+    let lang='en';try{lang=localStorage.getItem('ya-lang')||'en'}catch(e){};
+    const apply=l=>{lang=l;try{localStorage.setItem('ya-lang',l)}catch(e){};document.documentElement.lang=l;document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l]);document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));document.getElementById('result').textContent='';};
+    document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>apply(b.dataset.lang));
+    document.querySelectorAll('.answers button').forEach(b=>b.onclick=()=>document.getElementById('result').textContent=lang==='id'?'jawaban benar, sayang. ♡':'correct answer, sayang. ♡');
+    apply(lang);
+  </script>
 </body>
 </html>
